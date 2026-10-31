@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nefeli Xhaferaj – Personal Portfolio</title>
+  <meta name="description" content="Portfolio and interactive CV of Nefeli Xhaferaj – electronics, programming and technology." />
+  <meta name="theme-color" content="#04070f" />
+  <!-- Marks the page as JS-enabled so reveal animations only hide content when scripts run -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Fonts (fallback to system fonts if offline). Chakra Petch = the engineering-style name font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Chakra+Petch:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Animated circuit/particle background -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="bg-glow" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="logo" aria-label="Nefeli Xhaferaj – back to top">NX<span>.</span></a>
+
+      <nav class="nav__menu" id="navMenu" aria-label="Main navigation">
+        <ul class="nav__list" id="navList">
+          <li><a href="#home" data-link="home">Home</a></li>
+          <li><a href="#about" data-link="about">About</a></li>
+          <li><a href="#skills" data-link="skills">Skills</a></li>
+          <li><a href="#experience" data-link="experience">Experience</a></li>
+          <li><a href="#education" data-link="education">Education</a></li>
+          <li><a href="#certificates" data-link="certificates">Certificates</a></li>
+          <li><a href="#projects" data-link="projects">Projects</a></li>
+          <li><a href="#contact" data-link="contact">Contact</a></li>
+          <span class="nav__indicator" id="navIndicator" aria-hidden="true"></span>
+        </ul>
+        <a class="btn btn--small btn--primary nav__cv" href="assets/documents/Nefeli_Xhaferaj_CV.pdf" download="Nefeli_Xhaferaj_CV.pdf" data-cv>
+          <i data-lucide="download"></i> Download CV
+        </a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home" data-nav="home">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="status reveal" style="--i:0">
+            <span class="status__dot"></span> Open to opportunities
+          </p>
+
+          <!-- EDIT: change your name here (split into two words for the reveal animation) -->
+          <h1 class="hero__title" id="heroTitle" aria-label="Nefeli Xhaferaj">
+            <span class="word">Nefeli</span>
+            <span class="word word--accent">Xhaferaj</span>
+          </h1>
+
+          <p class="hero__subtitle reveal" style="--i:2">Electronics <i>|</i> Programming <i>|</i> Technology</p>
+
+          <p class="hero__ticker reveal" style="--i:3" id="ticker" aria-label="Building. Learning. Engineering.">
+            <span class="tick">Building.</span>
+            <span class="tick">Learning.</span>
+            <span class="tick">Engineering.</span>
+          </p>
+
+          <p class="hero__desc reveal" style="--i:4">
+            Driven by curiosity, precision and a passion for technology. A motivated student exploring electronics, programming and engineering.
+          </p>
+
+          <div class="hero__actions reveal" style="--i:5">
+            <a href="#projects" class="btn btn--primary">Explore My Work <i data-lucide="arrow-down-right"></i></a>
+            <a href="assets/documents/Nefeli_Xhaferaj_CV.pdf" download="Nefeli_Xhaferaj_CV.pdf" class="btn btn--ghost" data-cv>
+              <i data-lucide="download"></i> Download CV
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" style="--i:3">
+          <div class="avatar">
+            <div class="avatar__ring avatar__ring--1"></div>
+            <div class="avatar__ring avatar__ring--2"></div>
+            <!--
+              PROFILE PICTURE
+              Replace the file: assets/images/profile.jpg
+              (keep the same name, or change the path in src below). Portrait/square photo works best.
+            -->
+            <div class="media avatar__media">
+              <div class="ph ph--avatar"><span>NX</span><small>Add assets/images/profile.jpg</small></div>
+              <img src="assets/images/profile.jpg" alt="Portrait of Nefeli Xhaferaj" fetchpriority="high" decoding="async" />
+            </div>
+            <span class="chip chip--1"><i data-lucide="cpu"></i> Arduino</span>
+            <span class="chip chip--2"><i data-lucide="circuit-board"></i> PCB</span>
+            <span class="chip chip--3"><i data-lucide="pen-tool"></i> EasyEDA</span>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll to About"><i data-lucide="chevrons-down"></i></a>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about" data-nav="about">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow">01 / About</span>
+          <h2>A little about me.</h2>
+        </header>
+
+        <div class="about__grid">
+          <div class="about__text reveal" style="--i:1">
+            <p>I am a second-year high school student with a strong academic background and a particular interest in electronics, programming and technology.</p>
+            <p>I enjoy understanding how things work, analysing electronic circuits and building practical projects using Arduino and PCB technology.</p>
+            <p>My interests extend beyond technical subjects. I have experience working in an office environment, participating in debates and public speaking activities, and collaborating in educational events.</p>
+          </div>
+
+          <div class="stats">
+            <div class="stat panel reveal" style="--i:2">
+              <strong class="stat__num" data-count="9.8" data-decimals="1">9.8</strong>
+              <span class="stat__label">Current academic average</span>
+            </div>
+            <div class="stat panel reveal" style="--i:3">
+              <strong class="stat__num" data-count="9.5" data-decimals="1" data-suffix="+">9.5+</strong>
+              <span class="stat__label">Overall academic average</span>
+            </div>
+            <div class="stat panel reveal" style="--i:4">
+              <strong class="stat__num" data-count="3" data-decimals="0">3</strong>
+              <span class="stat__label">Main technical interests</span>
+              <span class="stat__sub">Electronics · Programming · Engineering</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section" id="skills" data-nav="skills">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow">02 / Skills</span>
+          <h2>Technical skills</h2>
+          <p class="section__lead">Areas I work with and keep learning. No ratings – just what I do.</p>
+        </header>
+
+        <!-- EDIT: add or remove skill cards by copying one <article class="skill"> block -->
+        <div class="skills">
+          <article class="skill panel reveal" style="--i:0">
+            <i data-lucide="cpu"></i>
+            <h3>Arduino</h3>
+            <p>Microcontroller programming and hands-on prototyping.</p>
+          </article>
+          <article class="skill panel reveal" style="--i:1">
+            <i data-lucide="circuit-board"></i>
+            <h3>PCB Design</h3>
+            <p>Turning circuit ideas into printed circuit boards.</p>
+          </article>
+          <article class="skill panel reveal" style="--i:2">
+            <i data-lucide="pen-tool"></i>
+            <h3>EasyEDA</h3>
+            <p>Schematic capture and PCB layout software.</p>
+          </article>
+          <article class="skill panel reveal" style="--i:3">
+            <i data-lucide="activity"></i>
+            <h3>Circuit Analysis</h3>
+            <p>Understanding how electronic circuits behave.</p>
+          </article>
+          <article class="skill panel reveal" style="--i:4">
+            <i data-lucide="code"></i>
+            <h3>Programming</h3>
+            <p>Writing code to solve problems and control hardware.</p>
+          </article>
+          <article class="skill panel reveal" style="--i:5">
+            <i data-lucide="zap"></i>
+            <h3>Electronics</h3>
+            <p>Components, circuits and practical electronic work.</p>
+          </article>
+          <article class="skill panel reveal" style="--i:6">
+            <i data-lucide="sigma"></i>
+            <h3>Mathematics</h3>
+            <p>Strong academic performance in the subject.</p>
+          </article>
+          <article class="skill panel reveal" style="--i:7">
+            <i data-lucide="atom"></i>
+            <h3>Physics</h3>
+            <p>Strong academic performance in the subject.</p>
+          </article>
+          <article class="skill panel reveal" style="--i:8">
+            <i data-lucide="monitor"></i>
+            <h3>Computer Skills</h3>
+            <p>Everyday computing and office software.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="section" id="experience" data-nav="experience">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow">03 / Experience</span>
+          <h2>Professional Experience</h2>
+        </header>
+
+        <div class="timeline">
+          <article class="timeline__item panel reveal" style="--i:1">
+            <span class="timeline__node" aria-hidden="true"></span>
+            <div class="timeline__top">
+              <h3>Office &amp; Printing Assistant</h3>
+              <!-- EDIT: replace [Dates] with your real dates, e.g. "Jul 2026 – Aug 2026" -->
+              <span class="timeline__date ph-text">[Aug 2026]</span>
+            </div>
+            <!-- EDIT: replace [Company name] with the real company -->
+            <p class="timeline__org ph-text">[Kings Office ]</p>
+            <p>Practical experience in an office environment, working with printing equipment, document preparation and everyday office tasks.</p>
+            <!-- EDIT: replace the placeholder bullets with real responsibilities (delete extras) -->
+            <ul class="bullets">
+              <li class="ph-text">[Assisted customers with printing, photocopying and document preparation. ]</li>
+              <li class="ph-text">[Helped troubleshoot basic printer and equipment issues.]</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EDUCATION ===================== -->
+    <section class="section" id="education" data-nav="education">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow">04 / Education</span>
+          <h2>Academic Background</h2>
+        </header>
+
+        <div class="edu">
+          <article class="edu__main panel reveal" style="--i:1">
+            <span class="eyebrow eyebrow--cyan">Current</span>
+            <h3>Second-Year High School Student</h3>
+            <!-- EDIT: replace with your school name -->
+            <p class="ph-text">[Institute Harry T Fultz]</p>
+            <p class="edu__note">Strong academic performance in Electronics, Mathematics and Physics.</p>
+            <div class="edu__tags">
+              <span>Electronics</span><span>Mathematics</span><span>Physics</span>
+            </div>
+          </article>
+
+          <div class="edu__scores">
+            <div class="score panel reveal" style="--i:2">
+              <span class="score__label">Overall academic average</span>
+              <strong>Above 9.5<small>/10</small></strong>
+            </div>
+            <div class="score panel reveal" style="--i:3">
+              <span class="score__label">Current academic year average</span>
+              <strong>9.8<small>/10</small></strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CERTIFICATES + ACTIVITIES ===================== -->
+    <section class="section" id="certificates" data-nav="certificates">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow">05 / Certificates &amp; Achievements</span>
+          <h2>Certificates &amp; Achievements</h2>
+          <p class="section__lead">Click any certificate to view it larger.</p>
+        </header>
+
+        <!--
+          CERTIFICATE IMAGES
+          Put your files in assets/images/certificates/ using the names below
+          (or change the src + data-full paths). Edit the title, organisation and date text freely.
+        -->
+        <div class="certs">
+          <article class="cert panel reveal" style="--i:0">
+            <button class="media cert__media" type="button" data-lightbox data-title="Debate Certificate" data-full="assets/images/certificates/debate-certificate.jpg" aria-label="Open Debate Certificate larger">
+              <div class="ph"><i data-lucide="award"></i><span>Add certificate image</span><small>assets/images/certificates/debate-certificate.jpg</small></div>
+              <img src="assets/images/certificates/debate-certificate.jpg" alt="Debate Certificate – HTMfun Debate Event" loading="lazy" decoding="async" />
+              <span class="media__zoom"><i data-lucide="maximize-2"></i></span>
+            </button>
+            <div class="cert__body">
+              <h3>Debate Certificate</h3>
+              <p>Participation in the HTMfun Debate Event.</p>
+              <dl>
+                <div><dt>Issued by</dt><dd>HTMfun Debate Event</dd></div>
+                <div><dt>Date</dt><dd class="ph-text">[24-27 November 2025]</dd></div>
+              </dl>
+            </div>
+          </article>
+
+     <article class="cert panel reveal" style="--i:1">
+  <button class="media cert__media" type="button" data-lightbox data-title="Learning Pathway Certificate" data-full="assets/images/certificates/learning-pathway.png" aria-label="Open Learning Pathway Certificate larger">
+    <div class="ph"><i data-lucide="award"></i><span>Add certificate image</span><small>assets/images/certificates/learning-pathway.png</small></div>
+    <img src="assets/images/certificates/learning-pathway.png" alt="Learning Pathway Certificate" loading="lazy" decoding="async" />
+    <span class="media__zoom"><i data-lucide="maximize-2"></i></span>
+  </button>
+  <div class="cert__body">
+    <h3>Learning Pathway Certificate</h3>
+    <p>Acting Responsibly on the Web, Accessing Sustainability and Contributing to a More Sustainable Society.</p>
+    <dl>
+      <div><dt>Issued by</dt><dd class="ph-text">[Girls Go STEM]</dd></div>
+      <div><dt>Date</dt><dd class="ph-text">[24/12/2025]</dd></div>
+    </dl>
+  </div>
+</article>
+
+          <article class="cert panel reveal" style="--i:2">
+            <button class="media cert__media" type="button" data-lightbox data-title="Academic Achievement" data-full="assets/images/certificates/academic-achievement.jpg" aria-label="Open Academic Achievement larger">
+              <div class="ph"><i data-lucide="award"></i><span>Add certificate image</span><small>assets/images/certificates/academic-achievement.jpg</small></div>
+              <img src="assets/images/certificates/academic-achievement.jpg" alt="Academic Achievement certificate" loading="lazy" decoding="async" />
+              <span class="media__zoom"><i data-lucide="maximize-2"></i></span>
+            </button>
+            <div class="cert__body">
+              <h3>Academic Achievement</h3>
+              <p>Recognition for high academic performance.</p>
+              <dl>
+                <div><dt>Issued by</dt><dd class="ph-text">[Institute Harry T Fultz ]</dd></div>
+                <div><dt>Date</dt><dd class="ph-text">[2025/2026]</dd></div>
+              </dl>
+            </div>
+          </article>
+        </div>
+
+        <!-- Extracurricular feature -->
+        <article class="feature panel reveal" id="activities" style="--i:1">
+          <div class="feature__label">
+            <span class="eyebrow eyebrow--cyan">Extracurricular Activities</span>
+            <i data-lucide="landmark"></i>
+          </div>
+          <div class="feature__body">
+            <h3>Children's Rights – Parliamentary Event</h3>
+            <p>Participated in an event focused on children's rights and delivered a public speech at Parliament.</p>
+            <ol class="steps">
+              <li><span class="steps__dot"></span><strong>The cause</strong><small>Children's rights</small></li>
+              <li><span class="steps__dot"></span><strong>My role</strong><small>Public speech</small></li>
+              <li><span class="steps__dot"></span><strong>The stage</strong><small>Parliament</small></li>
+              <li><span class="steps__dot"></span><strong>When</strong><small class="ph-text">[2023]</small></li>
+            </ol>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects" data-nav="projects">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow">06 / Projects</span>
+          <h2>Engineering &amp; Technical Projects</h2>
+          
+        </header>
+
+        <div class="filters reveal" role="group" aria-label="Filter projects">
+          <button class="filter is-active" data-filter="all" type="button">All</button>
+          <button class="filter" data-filter="arduino" type="button">Arduino</button>
+          <button class="filter" data-filter="pcb" type="button">PCB</button>
+          <button class="filter" data-filter="circuits" type="button">Circuits</button>
+          <button class="filter" data-filter="programming" type="button">Programming</button>
+        </div>
+
+        <!--
+          PROJECT CARDS
+          To add a project: copy one <article class="project"> block, change data-category,
+          the image path, title, description, tags and GitHub link.
+          Images go in assets/images/projects/.
+          GitHub link: replace href="#" with your repo URL. If you leave "#", the link just shows a hint.
+        -->
+        <div class="projects" id="projectGrid">
+          <article class="project panel reveal" data-category="arduino" style="--i:0">
+            <div class="media project__media">
+              <div class="ph"><i data-lucide="cpu"></i><span>Add project image</span><small>assets/images/projects/arduino-project.jpg</small></div>
+              <img src="assets/images/projects/arduino-project.jpg" alt="Arduino project" loading="lazy" decoding="async" />
+              <span class="badge">mp3</span>
+            </div>
+            <div class="project__body">
+              <span class="project__cat">Arduino</span>
+              <h3>Arduino Projects</h3>
+              <p> Arduino MP3 Player built and designed by me . 
+Its a functional Arduino-based MP3 player, combining embedded programming, electronic circuit design and hands-on PCB manufacturing.
+
+Components used:
+
+Arduino board
+
+DFPlayer Mini MP3 module
+
+MicroSD card
+
+OLED display
+
+Rechargeable battery
+
+Physical control buttons
+
+Rotary encoder
+
+Headphone jack
+
+Development process:
+
+Designed the electronic schematic and PCB layout using EasyEDA.
+
+Prepared and exported the manufacturing files.
+
+Transferred the design files to the PCB milling machine in the school laboratory.
+
+Manufactured the PCB using professional laboratory equipment.
+
+Soldered and assembled the electronic components onto the finished board.
+
+Tested the assembled circuit and developed practical skills in electronics and hardware prototyping.
+
+Skills gained: Arduino programming, circuit design, EasyEDA, PCB manufacturing, soldering, electronic assembly and hardware development.</p>
+              <ul class="tags"><li>Arduino</li><li>[Easy Eda]</li><li>[PCB]</li></ul>
+              <a class="link" href="https://github.com/Nefel777" target="_blank" rel="noopener" data-placeholder-link><i data-lucide="github"></i> GitHub</a>
+            </div>
+          </article>
+
+          <article class="project panel reveal" data-category="pcb" style="--i:1">
+            <div class="media project__media">
+              <div class="ph"><i data-lucide="circuit-board"></i><span>Add project image</span><small>assets/images/projects/pcb-design.jpg</small></div>
+              <img src="assets/images/projects/pcb-design.png" alt="PCB design project" loading="lazy" decoding="async" />
+              <span class="badge">pcb schematic</span>
+            </div>
+            <div class="project__body">
+              <span class="project__cat">PCB</span>
+              <h3>PCB Design</h3>
+              <p>Hybrid guitar filter pedal based on a classic State Variable Filter (SVF) topology using the LM13700 and digitally controlled by an Arduino Nano.
+
+The analog section implements a 2nd-order SVF (low-pass output used) with fully analog FREQ and RESONANCE controls.
+
+Digital control generates a PWM-derived control current (Iabc) for the LM13700, enabling LFO, GATE/Trigger, and dynamic modulation modes without placing digital processing in the audio path.
+
+True bypass is implemented via relay switching.
+Analog and digital power domains are separated for noise isolation.
+
+The project targets electronics enthusiasts and guitar players who want a true analog sound core combined with programmable, flexible control architecture.</p>
+              <ul class="tags"><li>EasyEDA</li><li>PCB</li><li>[Easy Eda]</li></ul>
+              <a class="link" href="https://github.com/Nefel777" target="_blank" rel="noopener" data-placeholder-link><i data-lucide="github"></i> GitHub</a>
+            </div>
+          </article>
+
+          <article class="project panel reveal" data-category="circuits" style="--i:2">
+            <div class="media project__media">
+              <div class="ph"><i data-lucide="activity"></i><span>Add project image</span><small>assets/images/projects/circuit-analysis.jpg</small></div>
+              <img src="assets/images/projects/circuit-analysis.png" alt="Electronic circuit analysis" loading="lazy" decoding="async" />
+              <span class="badge">Pedal circuit i've built</span>
+            </div>
+            <div class="project__body">
+              <span class="project__cat">Circuits</span>
+              <h3>Electronic Circuit Analysis</h3>
+              <p> Electronic Circuit Analysis – ProCo RAT Distortion Pedal
+
+Analysed the schematic of the ProCo RAT, a well-known guitar distortion pedal designed to transform an electric guitar's audio signal into a distorted sound.
+
+What the Circuit Does
+
+The circuit receives an audio signal from an electric guitar, amplifies it, creates distortion through diode clipping, shapes its frequency response and controls the final output volume.
+
+Main Circuit Components
+
+- OP07CP Operational Amplifier: Amplifies the incoming audio signal and provides the main gain stage.
+- 1N914A Diodes: Clip the audio waveform to produce the characteristic distortion effect.
+- 2N5457 JFET Transistor: Acts as an output buffer.
+- Resistors and Capacitors: Control current, filtering, signal coupling and circuit biasing.
+- 50k Distortion Potentiometer: Controls the amount of distortion.
+- 10k Filter Potentiometer: Adjusts the high-frequency content and tone.
+- 50k Volume Potentiometer: Controls the final output level.
+- 1N4002 Diode: Provides reverse-polarity protection.
+- 9V DC Power Supply: Powers the circuit.
+
+Method of Analysis
+
+- Identified the power supply, ground connections and voltage reference.
+- Traced the audio signal from the input to the output.
+- Divided the schematic into functional stages: power supply, amplification, clipping, filtering and output buffering.
+- Examined the role of individual electronic components.
+- Applied knowledge of voltage, current, resistance, capacitors, diodes and operational amplifiers to understand the circuit's operation.
+
+Skills Demonstrated: Electronic circuit analysis, schematic interpretation, operational amplifiers, semiconductor components, signal processing, audio electronics and technical problem-solving.</p>
+              <ul class="tags"><li>Circuit Analysis</li><li>[Electronics]</li><li>[Electrotechnics]</li><li>[EasyEda for the schematic  ]</li></ul>
+              <a class="link" href="https://github.com/Nefel777" target="_blank" rel="noopener" data-placeholder-link><i data-lucide="github"></i> GitHub</a>
+            </div>
+          </article>
+
+          <article class="project panel reveal" data-category="programming" style="--i:3">
+            <div class="media project__media">
+              <div class="ph"><i data-lucide="code"></i><span>Add project image</span><small>assets/images/projects/programming-project.jpg</small></div>
+              <img src="assets/images/projects/programming-project.png" alt="Programming project" loading="lazy" decoding="async" />
+              <span class="badge">Website</span>
+            </div>
+            <div class="project__body">
+              <span class="project__cat">Programming</span>
+              <h3>Programming Projects</h3>
+              <p>Guitar Shop Website – Web Development Project
+
+Designed and developed a guitar shop website that showcases different guitar models and provides visitors with an engaging browsing experience.
+
+Main Features:
+
+Homepage: Created a welcoming landing page with a clear introduction and navigation.
+
+Guitar Catalogue: Displayed different guitar models with images, names and detailed descriptions.
+
+About Us: Added a section introducing the guitar store and its purpose.
+
+Customer Testimonials: Included customer reviews to make the website feel more realistic.
+
+Image Gallery: Created a visual gallery showcasing guitars.
+
+Contact Section: Added contact information and a form for visitor inquiries.
+
+Skills Demonstrated: Web development, HTML, CSS, JavaScript, website structure, user interface design and responsive design.
+
+Live Website: https://nefel777.github.io/WebProject/</p>
+              <ul class="tags"><li>[html]</li><li>[css]</li><li>[JavaScript]</li></ul>
+              <a class="link" href="https://github.com/Nefel777" target="_blank" rel="noopener" data-placeholder-link><i data-lucide="github"></i> GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LANGUAGES ===================== -->
+    <section class="section" id="languages" data-nav="none">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow">07 / Languages</span>
+          <h2>Languages</h2>
+        </header>
+
+        <!-- Indicators use 5 simple steps (data-level 1–5), not percentages. Edit the data-level numbers to adjust. -->
+        <div class="langs">
+          <div class="lang reveal" style="--i:1">
+            <div class="lang__top"><h3>Albanian</h3><span>Native</span></div>
+            <div class="meter" data-level="5"><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="lang reveal" style="--i:2">
+            <div class="lang__top"><h3>English</h3><span>Advanced</span></div>
+            <div class="meter" data-level="4"><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="lang reveal" style="--i:3">
+            <div class="lang__top"><h3>German</h3><span>Beginner (A1)</span></div>
+            <div class="meter" data-level="1"><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section" id="contact" data-nav="contact">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow">08 / Contact</span>
+          <h2>Let's connect.</h2>
+          <p class="section__lead">Open to first job opportunities. </p>
+        </header>
+
+        <!--
+          CONTACT DETAILS
+          EDIT: email (two places: href + text), phone (two places), LinkedIn URL, GitHub URL.
+        -->
+        <div class="contact">
+          <a class="contact__item panel reveal" style="--i:0" href="mailto:neufnefel@gmail.com">
+            <i data-lucide="mail"></i>
+            <span class="contact__label">Email</span>
+            <span class="contact__value ph-text">neufnefel@gmail.com</span>
+          </a>
+          <a class="contact__item panel reveal" style="--i:1" href="tel:+355000000000">
+            <i data-lucide="phone"></i>
+            <span class="contact__label">Phone</span>
+            <span class="contact__value ph-text">+355 00 000 0000</span>
+          </a>
+          <div class="contact__item panel reveal" style="--i:2">
+            <i data-lucide="map-pin"></i>
+            <span class="contact__label">Tirana</span>
+            <span class="contact__value">Albania</span>
+          </div>
+          <a class="contact__item panel reveal" style="--i:3" href="https://www.linkedin.com/in/nefeli-xhaferaj-829b033a1/" target="_blank" rel="noopener" data-placeholder-link>
+            <i data-lucide="linkedin"></i>
+            <span class="contact__label">LinkedIn</span>
+            <span class="contact__value ph-text">linkedin.com/in/nefeli-xhaferaj</span>
+          </a>
+          <a class="contact__item panel reveal" style="--i:4" href="https://github.com/Nefel777" target="_blank" rel="noopener" data-placeholder-link>
+            <i data-lucide="github"></i>
+            <span class="contact__label">GitHub</span>
+            <span class="contact__value ph-text">github.com/Nefel777</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>Designed &amp; Built by Nefeli Xhaferaj</p>
+      <p>&copy; <span id="year">2026</span></p>
+    </div>
+  </footer>
+
+  <!-- ===================== LIGHTBOX ===================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <button class="lightbox__close" id="lbClose" type="button" aria-label="Close"><i data-lucide="x"></i></button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" type="button" aria-label="Previous"><i data-lucide="chevron-left"></i></button>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" type="button" aria-label="Next"><i data-lucide="chevron-right"></i></button>
+    <figure class="lightbox__figure">
+      <div class="lightbox__media">
+        <img id="lbImg" alt="" />
+        <div class="lightbox__ph" id="lbPh"><i data-lucide="image"></i><span>Image not added yet</span><small id="lbPath"></small></div>
+      </div>
+      <figcaption id="lbCaption"></figcaption>
+    </figure>
+  </div>
+
+  <!-- ===================== CV MISSING MODAL ===================== -->
+  <div class="modal" id="cvModal" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle" hidden>
+    <div class="modal__box panel">
+      <i data-lucide="file-warning"></i>
+      <h3 id="cvModalTitle">CV not added yet</h3>
+      <p>The CV file was not found. Place your PDF in the project at:</p>
+      <code>assets/documents/Nefeli_Xhaferaj_CV.pdf</code>
+      <p class="modal__small">The file name must match exactly. Then refresh the page and the button will download it.</p>
+      <button class="btn btn--primary" id="cvModalClose" type="button">Got it</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Libraries (CDN – need internet. The site still works without them, just with fewer effects/icons.) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
